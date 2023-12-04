@@ -6,7 +6,7 @@ public class TopDownCarControls : MonoBehaviour
 {
     [Header("car settings")]
     public float accelerationFactor = 30.0f;
-    public float turnFactor;
+    public float turnFactor = 3.5f;
 
         //local variables 
 
@@ -71,7 +71,7 @@ public class TopDownCarControls : MonoBehaviour
     public void SetInputVector(Vector2 inputVector)
     {
         steeringInput=inputVector.x;
-        steeringInput = inputVector.y;
+        accelerationInput = inputVector.y;
 
     }
 
