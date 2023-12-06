@@ -106,6 +106,27 @@ public class TopDownCarControls : MonoBehaviour
         //  We fixed the driftFactor to a constant value and multiplied it by the forwardVelocity to reduce the drift
         carRigidbody2d.velocity = forwardVelocity + rightVelocity * driftFactor;
     }
+    float GetlateralVelocity()
+    {
+        return Vector2.Dot(transform.right, carRigidbody2d.velocity);
+    }
+    public bool IsTireScreeching(out float lateralVelocity , out bool isBraking)
+    {
+        lateralVelocity = GetlateralVelocity();
+        isBraking = false;
+
+        //check if we are moving forward and the player hitting the brakes
+        if(accelerationInput < 0 && velocityUp > 0)
+        {
+            isBraking = true;
+            return true;
+        }
+        //if we have a lot of side movement
+        if (Mathf.Abs(GetlateralVelocity()) > 4.0f)
+            return true;
+        return false;
+
+    }
    
     //s function to set the input for the vectors which determines the force affevting the car
     public void SetInputVector(Vector2 inputVector)
