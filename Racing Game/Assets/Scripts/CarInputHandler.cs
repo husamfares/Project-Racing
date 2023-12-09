@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour
 {
+    public int playerNumber = 1;
+    
     //reference to the previous component (script)
     TopDownCarControls topDownCarControler;
 
@@ -21,12 +23,22 @@ public class NewBehaviourScript : MonoBehaviour
     {
 
         Vector2 inputVector = Vector2.zero;//creat a vector2 input
-        inputVector.x = Input.GetAxis("Horizontal");
-        //??24 & 26 
-        inputVector.y = Input.GetAxis("Vertical");
-        topDownCarControler.SetInputVector(inputVector);//here we're using setinputVector() fun from the previous script to  update the  input vector 
-    
-    
+                                           // inputVector.x = Input.GetAxis("Horizontal");
+                                           //??24 & 26 
+                                           //inputVector.y = Input.GetAxis("Vertical");
+                                           //topDownCarControler.SetInputVector(inputVector);//here we're using setinputVector() fun from the previous script to  update the  input vector 
+
+        switch(playerNumber){
+            case 1:
+                inputVector.x = Input.GetAxis("Horizontal_P1");
+                inputVector.y = Input.GetAxis("Vertical_P1");
+                break;
+            case 2:
+                inputVector.x = Input.GetAxis("Horizontal_P2");
+                inputVector.y = Input.GetAxis("Vertical_P2");
+                break;
+        }
+        topDownCarControler.SetInputVector(inputVector);
     }
 
 }
