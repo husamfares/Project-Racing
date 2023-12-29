@@ -27,7 +27,7 @@ public class CarSfxHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        audioMixer.SetFloat("SFXVolume", 0.5f);
+    //audioMixer.SetFloat("SFXVolume", 0.5f);
     }
 
     // Update is called once per frame
