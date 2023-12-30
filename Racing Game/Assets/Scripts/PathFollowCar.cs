@@ -4,7 +4,7 @@ public class PathFollowCar : MonoBehaviour
 {
     public Transform[] waypoints;
     public float speed = 5f;
-    public float rotationSpeed = 5f; // Adjust the rotation speed
+    public float rotationSpeed = 5f;
 
     private int currentWaypointIndex = 0;
 
@@ -17,24 +17,28 @@ public class PathFollowCar : MonoBehaviour
     {
         if (currentWaypointIndex < waypoints.Length)
         {
-            // Move towards the current waypoint
-            transform.position = Vector2.MoveTowards(transform.position, waypoints[currentWaypointIndex].position, speed * Time.deltaTime);
+            // Calculate direction towards the current waypoint
+            Vector3 direction = waypoints[currentWaypointIndex].position - transform.position;
 
-            // Rotate towards the current waypoint
-            Vector2 direction = (transform.position - waypoints[currentWaypointIndex].position  ).normalized;
-            float angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.AngleAxis(angle, Vector3.forward), rotationSpeed * Time.deltaTime);
+            // Move the car towards the current waypoint
+            transform.position += direction.normalized * speed * Time.deltaTime;
 
             // Check if the car has reached the current waypoint
-            if (Vector2.Distance(transform.position, waypoints[currentWaypointIndex].position) < 0.1f)
+            if (Vector3.Distance(transform.position, waypoints[currentWaypointIndex].position) < 0.1f)
             {
                 currentWaypointIndex++;
+            }
+
+            // Rotate the car towards the current waypoint
+            if (currentWaypointIndex < waypoints.Length)
+            {
+                Quaternion targetRotation = Quaternion.LookRotation(Vector3.forward, direction);
+                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
             }
         }
         else
         {
-            // Car reached the end of the path, you can restart the path or stop the movement
-            // For simplicity, let's reset the index to 0
+            // Car reached the end of the path, reset the index to 0 or stop the movement
             currentWaypointIndex = 0;
         }
     }
