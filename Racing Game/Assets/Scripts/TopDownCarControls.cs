@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class TopDownCarControls : MonoBehaviour
 {
-     
+
+
+    
+
     [Header("car settings")]
     public float driftFactor = 0.95f;
-    public float accelerationFactor = 25.0f;
+    public float accelerationFactor = 25.0f; 
+    
     public float turnFactor = 3.5f;
     public float maxSpeed = 12;
 
@@ -22,11 +26,13 @@ public class TopDownCarControls : MonoBehaviour
     Rigidbody2D carRigidbody2d;//to have access the rigidbody component in unity
 
 
+    
      void Awake()
     //awake is called when the script instance is being loaded
     //awake function atach code to unity's rigidbody
     {
         carRigidbody2d=GetComponent<Rigidbody2D>();
+        
     }
     // Start is called before the first frame update
     void Start()
@@ -42,14 +48,18 @@ public class TopDownCarControls : MonoBehaviour
     //a function that is used to  use unity's built in physics 
      void FixedUpdate()
     {
-        ApplyEnginForce();
-        KillOrthogonalVelocity();
-        ApplySteering();
+      
+        
+            ApplyEnginForce();
+            KillOrthogonalVelocity();
+            ApplySteering();
 
+        
     }
 
     void ApplyEnginForce()
     {
+
         velocityUp = Vector2.Dot(transform.up , carRigidbody2d.velocity);
 
         if (velocityUp > maxSpeed && accelerationInput > 0)
@@ -139,7 +149,49 @@ public class TopDownCarControls : MonoBehaviour
         return carRigidbody2d.velocity.magnitude;
     }
 
-    
+
+
+    // New
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    private Coroutine flashCoroutine;
+
+    // Add a function to start the flash
+    public void FlashSpeedIncrease(float flashDuration, float flashMultiplier)
+    {
+        // If there is already a flash in progress, stop it
+        if (flashCoroutine != null)
+        {
+            StopCoroutine(flashCoroutine);
+        }
+
+        // Start the flash coroutine
+        flashCoroutine = StartCoroutine(FlashSpeedCoroutine(flashDuration, flashMultiplier));
+    }
+
+    // Coroutine for the flash effect
+    private IEnumerator FlashSpeedCoroutine(float duration, float flashMultiplier)
+    {
+        // Save the original acceleration factor
+        float originalAccelerationFactor = accelerationFactor;
+
+        // Increase acceleration factor for the flash duration
+        accelerationFactor *= flashMultiplier;
+          
+
+        // Wait for the specified duration
+        yield return new WaitForSeconds(duration);
+
+        // Restore the original acceleration factor
+        accelerationFactor = originalAccelerationFactor;
+
+        // Reset the coroutine variable
+        flashCoroutine = null;
+    }
+
+
+
 
 
 }

@@ -7318,9 +7318,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1671345897}
   - component: {fileID: 1671345898}
+  - component: {fileID: 1671345899}
+  - component: {fileID: 1671345900}
   m_Layer: 5
   m_Name: Toggle (1)
-  m_TagString: Untagged
+  m_TagString: tag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7395,6 +7397,31 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_IsOn: 0
+--- !u!114 &1671345899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1671345896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85e3c050223a84f61a58c5cd2a372cb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toggle: {fileID: 1671345898}
+--- !u!114 &1671345900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1671345896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 284eab4d8bdc7bd44aa1aad4ece820e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1671793778
 GameObject:
   m_ObjectHideFlags: 0
@@ -7914,7 +7941,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1749197252
 RectTransform:
   m_ObjectHideFlags: 0

@@ -2,14 +2,23 @@ using UnityEngine;
 
 public class PathFollowCar : MonoBehaviour
 {
+
+
+    
+
     public Transform[] waypoints;
     public float speed = 5f;
     public float rotationSpeed = 5f;
 
     private int currentWaypointIndex = 0;
+    
+    private void Awake()
+    {
 
+    }
     void Update()
     {
+        
         MoveCarOnPath();
     }
 
