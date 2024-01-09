@@ -15,7 +15,12 @@ public class Coin : MonoBehaviour
     public static int score_count_p2 = 0;
     public Text score_p2;
     int done = 8;
+    private void Start()
+    {
+        score_p2.text = PlayersList.ChosenPlayer2.Name + " Score: " + score_count_p2;
 
+        score_p1.text = PlayersList.ChosenPlayer.Name + " Score: " + score_count_p1;
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
@@ -28,16 +33,16 @@ public class Coin : MonoBehaviour
         if (collision.CompareTag("player1"))
         {
 
-            
+            //PlayersList.ChosenPlayer.Name
             score_count_p1++;
-            score_p1.text = "Palyer1  Score: " + score_count_p1;
+            score_p1.text = PlayersList.ChosenPlayer.Name +" Score: " + score_count_p1;
             Destroy(gameObject);
         }
         else if (collision.CompareTag("player2"))
         {
 
             score_count_p2++;
-            score_p2.text = "Palyer1  Score: " + score_count_p2;
+            score_p2.text = PlayersList.ChosenPlayer2.Name + " Score: " + score_count_p2;
             Destroy(gameObject);
         }
     }
