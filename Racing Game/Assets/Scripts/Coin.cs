@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI; 
+using UnityEngine.UI;
 
 
 public class Coin : MonoBehaviour
@@ -23,6 +23,7 @@ public class Coin : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        
 
         if (score_count_p1 + score_count_p2 == done)
         {
@@ -35,7 +36,7 @@ public class Coin : MonoBehaviour
 
             //PlayersList.ChosenPlayer.Name
             score_count_p1++;
-            score_p1.text = PlayersList.ChosenPlayer.Name +" Score: " + score_count_p1;
+            score_p1.text = PlayersList.ChosenPlayer.Name + " Score: " + score_count_p1;
             Destroy(gameObject);
         }
         else if (collision.CompareTag("player2"))

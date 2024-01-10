@@ -60,6 +60,6 @@ public class AddingPlayers : MonoBehaviour
                 break;
             }
         }
-        SceneManager.LoadScene("Level 1");
+        SceneManager.LoadScene(ToggleController.lvl);
     }
 }

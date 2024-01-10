@@ -26224,7 +26224,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1478494143}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 83bf1b9fb0ceca54da5cc5530c411899, type: 3}
   m_Name: 
@@ -26241,7 +26241,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1478494143}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d9cfac7f909c6a542a1886f1d2bdc45c, type: 3}
   m_Name: 
@@ -26344,7 +26344,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1478494143}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 07461dc355a0d4986a788ff773b60db7, type: 3}
   m_Name: 
@@ -26444,8 +26444,8 @@ MonoBehaviour:
   - {fileID: 1115841080}
   - {fileID: 418854649}
   - {fileID: 1624149071}
-  speed: 5
-  rotationSpeed: 5
+  speed: 8
+  rotationSpeed: 8
 --- !u!114 &1478494152
 MonoBehaviour:
   m_ObjectHideFlags: 0
