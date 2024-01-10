@@ -50,8 +50,10 @@ public class MainMenu : MonoBehaviour
 
 
         
-        //SceneManager.LoadSceneAsync(2);
+
+        //SceneManager.LoadSceneAsync(4);
         //SceneManager.LoadScene(toggleController.getLvl());
+
         SceneManager.LoadScene(ToggleController.lvl);
 
     }

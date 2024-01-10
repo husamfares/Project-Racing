@@ -3659,6 +3659,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score_p1: {fileID: 2128022360}
   score_p2: {fileID: 1446999170}
+  gameObject: {fileID: 0}
 --- !u!61 &506807902
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -26438,6 +26439,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score_p1: {fileID: 2128022360}
   score_p2: {fileID: 1446999170}
+  gameObject: {fileID: 0}
 --- !u!61 &1490282673
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -26764,6 +26766,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score_p1: {fileID: 2128022360}
   score_p2: {fileID: 1446999170}
+  gameObject: {fileID: 1549074656}
 --- !u!1 &1549679350
 GameObject:
   m_ObjectHideFlags: 0
@@ -27725,6 +27728,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score_p1: {fileID: 2128022360}
   score_p2: {fileID: 1446999170}
+  gameObject: {fileID: 0}
 --- !u!61 &1632640040
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -28250,6 +28254,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score_p1: {fileID: 2128022360}
   score_p2: {fileID: 1446999170}
+  gameObject: {fileID: 0}
 --- !u!61 &1668024324
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -28834,6 +28839,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score_p1: {fileID: 2128022360}
   score_p2: {fileID: 1446999170}
+  gameObject: {fileID: 1729259061}
 --- !u!61 &1729259064
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -30517,6 +30523,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score_p1: {fileID: 2128022360}
   score_p2: {fileID: 1446999170}
+  gameObject: {fileID: 0}
 --- !u!61 &1901121274
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -30790,6 +30797,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score_p1: {fileID: 2128022360}
   score_p2: {fileID: 1446999170}
+  gameObject: {fileID: 0}
 --- !u!61 &1914691702
 BoxCollider2D:
   m_ObjectHideFlags: 0
